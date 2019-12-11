@@ -4,48 +4,55 @@ import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.List;
 
 @Repository
 @Transactional
 public class ItemDAO {
-    private Class<Item> clazz;
-
-    public Class<Item> getClazz() {
-        return clazz;
-    }
-
-    public void setClazz(Class<Item> clazz) {
-        this.clazz = clazz;
-    }
 
     @PersistenceContext
     private EntityManager entityManager;
+    private Item item;
+
+    public ItemDAO(Item item) {
+        this.item = item;
+    }
+
+    public Item getItem() {
+        return item;
+    }
+
+    public void setItem(Item item) {
+        this.item = item;
+    }
 
     public Item findById(long id) {
-        return entityManager.find(clazz, id);
+        return entityManager.find(Item.class, id);
     }
 
-    public List findAll() {
-        return entityManager.createQuery("from " + clazz.getName())
-                .getResultList();
+    public void save(Item item) {
+        entityManager.persist(item);
     }
 
-    public void save(Item entity) {
-        entityManager.persist(entity);
+    public Item update(Item item) {
+        return entityManager.merge(item);
     }
 
-    public Item update(Item entity) {
-        return entityManager.merge(entity);
-    }
-
-    public void deleteItem(Item entity) {
-        entityManager.remove(entity);
-    }
-
-    public void delete(long entityId) {
-        Item entity = findById(entityId);
+    public void delete(long id) {
+        Item entity = findById(id);
         deleteItem(entity);
+    }
+
+    //хз
+    public void deleteItem(Item item) {
+        entityManager.remove(item);
+    }
+
+    //хз
+    public List findAll() {
+        Query query = entityManager.createNativeQuery("SELECT * FROM ITEM", Item.class);
+        return query.getResultList();
     }
 }
