@@ -1,5 +1,6 @@
 package com.lesson_db;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -17,6 +18,7 @@ public class ItemDAO {
 
     private Item item;
 
+    @Autowired
     public ItemDAO(Item item) {
         this.item = item;
     }
