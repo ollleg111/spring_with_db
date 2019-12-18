@@ -10,65 +10,95 @@
   <packaging>war</packaging>
 
   <name>spring_with_db Maven Webapp</name>
-<!--  &lt;!&ndash; FIXME change it to the project's website &ndash;&gt;-->
-<!--  <url>http://www.example.com</url>-->
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
+    <junit.version>4.11</junit.version>
+    <spring-core.version>5.2.2.RELEASE</spring-core.version>
+    <ojdbc7.version>12.1.0</ojdbc7.version>
+    <hibernate-entitymanager.version>5.4.9.Final</hibernate-entitymanager.version>
+    <spring-data-jpa.version>2.2.3.RELEASE</spring-data-jpa.version>
+    <jackson-databind.version>2.9.8</jackson-databind.version>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-context</artifactId>
-      <version>5.2.2.RELEASE</version>
+      <version>${spring-core.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
-      <version>5.2.2.RELEASE</version>
+      <version>${spring-core.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-tx -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-tx</artifactId>
-      <version>5.2.2.RELEASE</version>
+      <version>${spring-core.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-orm -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-orm</artifactId>
-      <version>5.2.2.RELEASE</version>
+      <version>${spring-core.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-entitymanager -->
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
-      <version>5.4.9.Final</version>
+      <version>${hibernate-entitymanager.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
-      <version>5.2.2.RELEASE</version>
+      <version>${spring-core.version}</version>
     </dependency>
     <!-- https://mvnrepository.com/artifact/com.oracle/ojdbc7 -->
     <dependency>
       <groupId>com.oracle</groupId>
       <artifactId>ojdbc7</artifactId>
-      <version>12.1.0</version>
+      <version>${ojdbc7.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>${spring-core.version}</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.springframework.data/spring-data-jpa -->
+    <dependency>
+      <groupId>org.springframework.data</groupId>
+      <artifactId>spring-data-jpa</artifactId>
+      <version>${spring-data-jpa.version}</version>
     </dependency>
 
+    <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-webmvc</artifactId>
+      <version>${spring-core.version}</version>
+    </dependency>
+
+
+    <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>${jackson-databind.version}</version>
+    </dependency>
   </dependencies>
 
   <build>

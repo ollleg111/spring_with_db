@@ -13,21 +13,13 @@ import java.util.List;
 @Transactional
 public class ItemDAO {
 
-    @PersistenceContext
-    private EntityManager entityManager;
-
     private Item item;
+
+    @PersistenceContext
+    EntityManager entityManager;
 
     @Autowired
     public ItemDAO(Item item) {
-        this.item = item;
-    }
-
-    public Item getItem() {
-        return item;
-    }
-
-    public void setItem(Item item) {
         this.item = item;
     }
 
@@ -55,6 +47,7 @@ public class ItemDAO {
 
     //хз
     public List findAll() {
+        assert entityManager != null;
         Query query = entityManager.createNativeQuery("SELECT * FROM ITEM", Item.class);
         return query.getResultList();
     }
