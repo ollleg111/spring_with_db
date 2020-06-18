@@ -20,7 +20,7 @@
     <ojdbc7.version>12.1.0</ojdbc7.version>
     <hibernate-entitymanager.version>5.4.9.Final</hibernate-entitymanager.version>
     <spring-data-jpa.version>2.2.3.RELEASE</spring-data-jpa.version>
-    <jackson-databind.version>2.9.8</jackson-databind.version>
+    <jackson-databind.version>2.10.0.pr1</jackson-databind.version>
   </properties>
 
   <dependencies>
