@@ -16,7 +16,7 @@
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <junit.version>4.11</junit.version>
-    <spring-core.version>5.2.2.RELEASE</spring-core.version>
+    <spring-core.version>5.3.19</spring-core.version>
     <ojdbc7.version>12.1.0</ojdbc7.version>
     <hibernate-entitymanager.version>5.4.9.Final</hibernate-entitymanager.version>
     <spring-data-jpa.version>2.2.3.RELEASE</spring-data-jpa.version>
